@@ -121,6 +121,10 @@ export class FocusedImage {
       this.img.style[wR > hR ? 'maxHeight' : 'maxWidth'] = '100%';
     }
 
+    if (!this.img.style.maxHeight) {
+      this.img.style.maxHeight = 'none';
+    }
+
     if (wR > hR) {
       hShift = `${this.calcShift(hR, containerW, imageW, this.focus.x)}%`;
     } else if (wR < hR) {
